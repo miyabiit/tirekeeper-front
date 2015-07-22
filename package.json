@@ -1,0 +1,29 @@
+{
+  "name": "TireKeeper",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "supervisor -i node_modules,tools app",
+    "test": "mocha --timeout 120000"
+  },
+  "dependencies": {
+    "async": "*",
+    "bootstrap": "*",
+    "config": "*",
+    "connect-flash": "*",
+    "ect": "*",
+    "express": "3.2.6",
+    "less-middleware": "*",
+    "log4js": "*",
+    "mongoose": "*",
+    "request": "*",
+    "supervisor": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "expect.js": "*",
+    "should": "*",
+    "selenium-webdriver": "*",
+    "opts": "*"
+  }
+}

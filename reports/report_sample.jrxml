@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.4.final using JasperReports Library version 6.0.4  -->
+<!-- 2015-05-29T16:05:23 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_sample" language="javascript" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="00576016-ceed-4065-9fcb-2efea788ac8e">
+	<property name="ireport.jasperserver.url" value="http://localhost:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.report.resource" value="/reports/TIREKE/TirekeSample_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/TIREKE/TirekeSample"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="TIREKE mongodb"/>
+	<subDataset name="tireke" uuid="abea10c1-9ebe-4c8a-853e-82a1d0d54f53">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+		<queryString language="MongoDbQuery">
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<queryString language="MongoDbQuery">
+		<![CDATA[{ 'collectionName' : 'requests',
+  'sort' : {
+    'request_no' : -1,
+  }
+}]]>
+	</queryString>
+	<field name="create_date" class="java.util.Date"/>
+	<field name="mail" class="java.lang.String"/>
+	<field name="menber_no" class="java.lang.String"/>
+	<field name="note" class="java.lang.String"/>
+	<field name="request_no" class="java.lang.Integer"/>
+	<field name="state" class="java.lang.Integer"/>
+	<field name="tel" class="java.lang.String"/>
+	<field name="tire_id" class="java.lang.String"/>
+	<field name="update_date" class="java.util.Date"/>
+	<field name="user_id" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement key="" x="200" y="30" width="181" height="21" uuid="89e57272-6bc2-4e4c-bfba-c585494ccf03"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAG" size="11"/>
+				</textElement>
+				<text><![CDATA[帳票テスト]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement key="" mode="Opaque" x="0" y="0" width="100" height="25" backcolor="rgba(0, 162, 255, 0.20392157)" uuid="fed68228-c432-4caf-97c4-970b33488178">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAG" size="11"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[依頼番号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="200" y="0" width="100" height="25" backcolor="rgba(0, 162, 255, 0.20392157)" uuid="9b84d5bd-a05f-4bce-9577-9740d10ecafe">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAG" size="11"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[担当者ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="400" y="0" width="150" height="25" backcolor="rgba(0, 162, 255, 0.20392157)" uuid="6c2cae57-1f31-44d7-ba7f-248f36425289">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAG" size="11"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[備考]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="300" y="0" width="100" height="25" backcolor="rgba(0, 162, 255, 0.20392157)" uuid="8e7a4f87-4fb7-4452-b299-cc3aab5e549e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAG" size="11"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[会員番号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="100" y="0" width="100" height="25" backcolor="rgba(0, 162, 255, 0.20392157)" uuid="bfc57767-a99c-4173-aa7b-a5a358eb37eb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAG" size="11"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[発生日]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="100" height="20" uuid="2c2503f5-6645-4c96-8a07-00b20ba4ea26">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAM"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{request_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="200" y="0" width="100" height="20" uuid="4d126ff3-1cb5-4e4c-8cf6-b8c288132f76">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAM"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="400" y="0" width="150" height="20" uuid="a7c72a81-5033-4cd1-917c-55cd82877ee7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAM"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{note}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="300" y="0" width="100" height="20" uuid="b3f89504-dc79-4003-8dcd-cb96c66c85f7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAM"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{menber_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="100" y="0" width="100" height="20" uuid="7b1cf80d-1540-4c15-8d56-8266c0069b6c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#0000FF"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAM"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{create_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

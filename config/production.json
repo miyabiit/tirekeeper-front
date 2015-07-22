@@ -1,0 +1,38 @@
+{
+  "db": "mongodb://localhost:27017/tireke",
+  "log4js": {
+    "configure": {
+      "appenders": [
+        {
+          "category": "system",
+          "type": "dateFile",
+          "filename": "logs/system.log",
+          "pattern":  "-yyyy-MM-dd"
+        },
+        {
+          "category": "access",
+          "type": "dateFile",
+          "filename": "logs/access.log",
+          "pattern":  "-yyyy-MM-dd"
+        },
+        {
+          "category": "error",
+          "type": "dateFile",
+          "filename": "logs/error.log",
+          "pattern":  "-yyyy-MM-dd"
+        }
+      ],
+      "levels": {
+        "system": "INFO",
+        "access": "INFO",
+        "error": "INFO"
+      },
+      "replaceConsole": true
+    }
+  },
+  "reportServer": {
+	  "username": "jasperadmin",
+	  "password": "jasperadmin",
+	  "url": "http://localhost:8080/jasperserver"
+  }
+}

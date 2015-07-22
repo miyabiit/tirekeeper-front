@@ -1,0 +1,53 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="">Tire Keeper</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown <%- if @mainmenu=='request' then 'active' else undefined %>">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">依頼<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li class="<%- if @submenu=='keep' then 'active' else undefined %>"><a href="/keep">引取依頼</a></li>
+            <li class="<%- if @submenu=='release' then 'active' else undefined %> disabled"><a href="/release">出荷依頼</a></li>
+            <li class="<%- if @submenu=='request_list' then 'active' else undefined %>"><a href="/request_list">依頼状況照会</a></li>
+          </ul>
+        </li>
+    <% switch @user.role : %>
+      <% when 0 : %>
+        <li class="<%- if @submenu=='keeping_list' then 'active' else undefined %> disabled"><a href="/keeping_list">預入一覧<span class="sr-only">(current)</span></a></li>
+        <li class="disabled"><a href="">会員情報</a></li>
+        <li class="dropdown <%- if @mainmenu=='maintenance' then 'active' else undefined %> disabled">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">メンテナンス<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li class="disabled"><a href="">○○マスタ</a></li>
+          </ul>
+        </li>
+      <% end %>
+      <% when 1 : %>
+      <% end %>
+      <% when 2 : %>
+      <% end %>
+      <% else : %>
+      <% end %>
+    <% end %>
+        <li>
+          <form id="logoutForm" method="post">
+            <input name='_method' type="hidden" value="DELETE">
+          </form>
+          <a href="" onclick="javascript:document.getElementById('logoutForm').submit();return false;">ログアウト</a>
+        </form>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>
+<p align="right">
+  <%= @user.name %> さん、こんにちは！
+</p>
